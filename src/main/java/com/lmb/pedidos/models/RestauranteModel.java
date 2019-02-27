@@ -1,4 +1,4 @@
-package com.lmb.models;
+package com.lmb.pedidos.models;
 
 import java.util.List;
 
@@ -42,10 +42,10 @@ public class RestauranteModel {
 	@Column(name="HORARIO_FUNCIONAMENTO", nullable = false)
 	private String horaFuncinamento;
 	
-	@OneToMany(mappedBy = "RESTAURANTE", targetEntity = MenuModel.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "restautanteId", targetEntity = MenuModel.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<MenuModel> listMenu;
 	
-	
+		
 	public Long getId() {
 		return id;
 	}

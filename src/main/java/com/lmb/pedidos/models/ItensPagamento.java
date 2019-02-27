@@ -1,4 +1,4 @@
-package com.lmb.models;
+package com.lmb.pedidos.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

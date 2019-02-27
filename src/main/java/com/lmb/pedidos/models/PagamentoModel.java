@@ -1,4 +1,4 @@
-package com.lmb.models;
+package com.lmb.pedidos.models;
 
 import java.util.List;
 
@@ -34,7 +34,7 @@ public class PagamentoModel {
 	private String pagamentoOpcao;
 	
 	
-	@OneToMany(mappedBy = "PAGAMENTO", targetEntity = ItensPagamento.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "menuId", targetEntity = ItensPagamento.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<ItensPagamento> listItemPagamento;
 
 
