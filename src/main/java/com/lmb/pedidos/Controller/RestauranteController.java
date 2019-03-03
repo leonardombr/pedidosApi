@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lmb.pedidos.dto.BaseReturn;
+import com.lmb.pedidos.models.AvaliacaoModal;
+import com.lmb.pedidos.models.MenuModel;
 import com.lmb.pedidos.models.RestauranteModel;
 import com.lmb.pedidos.services.RestauranteService;
 
@@ -58,11 +60,31 @@ public class RestauranteController extends BaseReturn {
 		}
 	}
 
-	@GetMapping(value = "/listar")
+	@GetMapping(value = "/listar", produces = "application/json")
 	public @ResponseBody ResponseEntity findAll() {
 		try {
 			List<RestauranteModel> restaurante = restauranteService.findAll();
 			return handleResponse(restaurante);
+		} catch (Exception e) {
+			return handleError(e);
+		}
+	}
+	
+	@GetMapping(value = "/{idRestaurant}/menu")
+	public @ResponseBody ResponseEntity findMenuByRestaurant(@PathVariable Long idRestaurant) {
+		try {
+			List<MenuModel> listMenu = restauranteService.findMenuByRestaurant(idRestaurant);
+			return handleResponse(listMenu);
+		} catch (Exception e) {
+			return handleError(e);
+		}
+	}
+	
+	@GetMapping(value = "/{idRestaurant}/avaliacao")
+	public @ResponseBody ResponseEntity findAvaliacaoByRestaurant(@PathVariable Long idRestaurant) {
+		try {
+			List<AvaliacaoModal> listAvaliacao = restauranteService.findAvaliacaoByRestaurant(idRestaurant);
+			return handleResponse(listAvaliacao);
 		} catch (Exception e) {
 			return handleError(e);
 		}

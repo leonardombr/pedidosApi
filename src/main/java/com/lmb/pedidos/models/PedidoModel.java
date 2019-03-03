@@ -9,17 +9,27 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
-@Table(name = "PAGAMENTO")
-public class PagamentoModel {
+@Table(name = "PEDIDO")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+public class PedidoModel {
 	
 	@Id
 	@Column(name = "ID")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	
+	@Column(name = "NOME", nullable = false)
+	private String nome;
+	
+	@Column(name = "EMAIL", nullable = false)
+	private String email;
 	
 	@Column(name = "ENDERECO", nullable = false)
 	private String endereco;
@@ -27,16 +37,14 @@ public class PagamentoModel {
 	@Column(name = "NUMERO", nullable = false)
 	private Integer numero;
 	
-	@Column(name = "ENDERECO_OPCIONAL", nullable = false)
+	@Column(name = "ENDERECO_OPCIONAL")
 	private String enderecoOpcional;
 	
 	@Column(name = "PAGAMENTO_OPCAO", nullable = false)
-	private String pagamentoOpcao;
+	private String pagamentoOpcao;	
 	
-	
-	@OneToMany(mappedBy = "menuId", targetEntity = ItensPagamento.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	private List<ItensPagamento> listItemPagamento;
-
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "pedido")	
+	private List<ItensPedido> listItemPedido;
 
 	public Long getId() {
 		return id;
@@ -44,6 +52,22 @@ public class PagamentoModel {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getEndereco() {
@@ -78,12 +102,12 @@ public class PagamentoModel {
 		this.pagamentoOpcao = pagamentoOpcao;
 	}
 
-	public List<ItensPagamento> getListItemPagamento() {
-		return listItemPagamento;
+	public List<ItensPedido> getListItemPedido() {
+		return listItemPedido;
 	}
 
-	public void setListItemPagamento(List<ItensPagamento> listItemPagamento) {
-		this.listItemPagamento = listItemPagamento;
-	}	
-	
+	public void setListItemPedido(List<ItensPedido> listItemPedido) {
+		this.listItemPedido = listItemPedido;
+	}
+
 }

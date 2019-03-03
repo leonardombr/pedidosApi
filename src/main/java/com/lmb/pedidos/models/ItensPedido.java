@@ -1,17 +1,23 @@
 package com.lmb.pedidos.models;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
-@Table(name = "ITEM_PAGAMENTO")
-public class ItensPagamento {
+@Table(name = "ITEM_PEDIDO")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+public class ItensPedido {
 	
 	@Id
 	@Column(name = "ID")
@@ -23,9 +29,11 @@ public class ItensPagamento {
 	
 	@ManyToOne
 	@JoinColumn(name = "ID_MENU", nullable = false)
-	private MenuModel menuId;
+	private MenuModel menu;
 	
-	
+	@ManyToOne
+	private PedidoModel pedido;
+
 	public Long getId() {
 		return id;
 	}
@@ -37,17 +45,27 @@ public class ItensPagamento {
 	public Integer getQuantidade() {
 		return quantidade;
 	}
-	
+
 	public void setQuantidade(Integer quantidade) {
 		this.quantidade = quantidade;
 	}
-	
-	public MenuModel getMenuId() {
-		return menuId;
+
+	public MenuModel getMenu() {
+		return menu;
+	}
+
+	public void setMenu(MenuModel menu) {
+		this.menu = menu;
+	}
+
+	public PedidoModel getPedido() {
+		return pedido;
+	}
+
+	public void setPedido(PedidoModel pedido) {
+		this.pedido = pedido;
 	}
 	
-	public void setMenuId(MenuModel menuId) {
-		this.menuId = menuId;
-	}
+	
 	
 }

@@ -17,21 +17,21 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lmb.pedidos.dto.BaseReturn;
-import com.lmb.pedidos.models.ItensPagamento;
-import com.lmb.pedidos.services.ItemPagamentoService;
+import com.lmb.pedidos.models.ItensPedido;
+import com.lmb.pedidos.services.ItemPedidoService;
 
 @RestController
 @CrossOrigin
-@RequestMapping(value = "/itemPagamento")
-public class ItemPagamentoController extends BaseReturn {
+@RequestMapping(value = "/itemPedido")
+public class ItemPedidoController extends BaseReturn {
 
 	@Autowired
-	private ItemPagamentoService itemPagamentoService;
+	private ItemPedidoService itemPedidoService;
 
 	@PostMapping(value = "/salvar", produces = "application/json")
-	public @ResponseBody ResponseEntity salvar(@RequestBody @Valid ItensPagamento itemPagamento) {
+	public @ResponseBody ResponseEntity salvar(@RequestBody @Valid ItensPedido itemPagamento) {
 		try {
-			ItensPagamento item = itemPagamentoService.save(itemPagamento);
+			ItensPedido item = itemPedidoService.save(itemPagamento);
 			return handleResponse(item, "Cadastro realizado com sucesso!");
 		} catch (Exception e) {
 			return handleError(e);
@@ -39,9 +39,9 @@ public class ItemPagamentoController extends BaseReturn {
 	}
 
 	@DeleteMapping(value = "/delete", produces = "application/json")
-	public @ResponseBody ResponseEntity delete(@RequestBody @Valid ItensPagamento itemPagamento) {
+	public @ResponseBody ResponseEntity delete(@RequestBody @Valid ItensPedido itemPagamento) {
 		try {
-			itemPagamentoService.delete(itemPagamento);
+			itemPedidoService.delete(itemPagamento);
 			return handleResponse("Excluido com sucesso!");
 		} catch (Exception e) {
 			return handleError(e);
@@ -51,7 +51,7 @@ public class ItemPagamentoController extends BaseReturn {
 	@GetMapping(value = "/{id}", produces = "application/json")
 	public @ResponseBody ResponseEntity getById(@PathVariable Long id) {
 		try {
-			ItensPagamento item = itemPagamentoService.getById(id);
+			ItensPedido item = itemPedidoService.getById(id);
 			return handleResponse(item);
 		} catch (Exception e) {
 			return handleError(e);
@@ -61,7 +61,7 @@ public class ItemPagamentoController extends BaseReturn {
 	@GetMapping(value = "/listar")
 	public @ResponseBody ResponseEntity findAll() {
 		try {
-			List<ItensPagamento> itens = itemPagamentoService.findAll();
+			List<ItensPedido> itens = itemPedidoService.findAll();
 			return handleResponse(itens);
 		} catch (Exception e) {
 			return handleError(e);

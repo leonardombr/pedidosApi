@@ -47,4 +47,14 @@ public class MenuService {
 		
 	}
 	
+	public List<MenuModel> findMenuByRestaurant(Long idRestaurant) throws Exception{
+		try {
+			List<MenuModel> listMenu = menuRepository.findAllByRestaurant(idRestaurant);
+			return listMenu;
+		} catch (Exception e) {
+			throw new Exception(e);
+		}
+		
+	}
+	
 }

@@ -12,8 +12,11 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name="RESTAURANTE")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class RestauranteModel {
 	
 	@Id
@@ -42,7 +45,7 @@ public class RestauranteModel {
 	@Column(name="HORARIO_FUNCIONAMENTO", nullable = false)
 	private String horaFuncinamento;
 	
-	@OneToMany(mappedBy = "restautanteId", targetEntity = MenuModel.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "restautante", targetEntity = MenuModel.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<MenuModel> listMenu;
 	
 		

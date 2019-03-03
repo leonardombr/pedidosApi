@@ -1,20 +1,19 @@
 package com.lmb.pedidos.models;
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name="MENU")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class MenuModel {
 	
 	@Id
@@ -36,7 +35,7 @@ public class MenuModel {
 	
 	@ManyToOne
 	@JoinColumn(name="ID_RESTAURANTE", nullable = false)
-	private RestauranteModel restautanteId;
+	private RestauranteModel restautante;
 	
 	
 	public Long getId() {
@@ -79,12 +78,12 @@ public class MenuModel {
 		this.preco = preco;
 	}
 	
-	public RestauranteModel getRestautanteId() {
-		return restautanteId;
+	public RestauranteModel getRestautante() {
+		return restautante;
 	}
 	
-	public void setRestautanteId(RestauranteModel restautanteId) {
-		this.restautanteId = restautanteId;
+	public void setRestautante(RestauranteModel restautante) {
+		this.restautante = restautante;
 	}
 	
 }
