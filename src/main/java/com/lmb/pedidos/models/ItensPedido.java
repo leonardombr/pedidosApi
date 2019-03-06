@@ -31,7 +31,8 @@ public class ItensPedido {
 	@JoinColumn(name = "ID_MENU", nullable = false)
 	private MenuModel menu;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "ID_PEDIDO")
 	private PedidoModel pedido;
 
 	public Long getId() {

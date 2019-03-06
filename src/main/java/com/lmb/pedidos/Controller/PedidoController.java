@@ -29,9 +29,9 @@ public class PedidoController extends BaseReturn {
 	private PedidoService pedidoService;
 
 	@PostMapping(value = "/salvar", produces = "application/json")
-	public @ResponseBody ResponseEntity save(@RequestBody @Valid PedidoModel pagamento) {
+	public @ResponseBody ResponseEntity save(@RequestBody @Valid PedidoModel pedido) {
 		try {
-			PedidoModel p = pedidoService.save(pagamento);
+			PedidoModel p = pedidoService.save(pedido);
 			return handleResponse(p, "Pedido realizado com sucesso!");
 		} catch (Exception e) {
 			return handleError(e);
@@ -39,9 +39,9 @@ public class PedidoController extends BaseReturn {
 	}
 
 	@DeleteMapping(value = "/delete", produces = "application/json")
-	public @ResponseBody ResponseEntity delete(@RequestBody @Valid PedidoModel pagamento) {
+	public @ResponseBody ResponseEntity delete(@RequestBody @Valid PedidoModel pedido) {
 		try {
-			pedidoService.delete(pagamento);
+			pedidoService.delete(pedido);
 			return handleResponse("Excluido com sucesso!");
 		} catch (Exception e) {
 			return handleError(e);
@@ -51,8 +51,8 @@ public class PedidoController extends BaseReturn {
 	@GetMapping(value = "/{id}", produces = "application/json")
 	public @ResponseBody ResponseEntity getById(@PathVariable Long id) {
 		try {
-			PedidoModel pagamento = pedidoService.getById(id);
-			return handleResponse(pagamento);
+			PedidoModel pedido = pedidoService.getById(id);
+			return handleResponse(pedido);
 		} catch (Exception e) {
 			return handleError(e);
 		}
@@ -61,8 +61,8 @@ public class PedidoController extends BaseReturn {
 	@GetMapping(value = "/listar")
 	public @ResponseBody ResponseEntity findAll() {
 		try {
-			List<PedidoModel> pagamentos = pedidoService.findAll();
-			return handleResponse(pagamentos);
+			List<PedidoModel> pedidos = pedidoService.findAll();
+			return handleResponse(pedidos);
 		} catch (Exception e) {
 			return handleError(e);
 		}
