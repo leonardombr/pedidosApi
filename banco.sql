@@ -62,7 +62,7 @@ CREATE TABLE `hibernate_sequence` (
 
 LOCK TABLES `hibernate_sequence` WRITE;
 /*!40000 ALTER TABLE `hibernate_sequence` DISABLE KEYS */;
-INSERT INTO `hibernate_sequence` VALUES (173),(173);
+INSERT INTO `hibernate_sequence` VALUES (176),(176);
 /*!40000 ALTER TABLE `hibernate_sequence` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -90,7 +90,7 @@ CREATE TABLE `item_pedido` (
 
 LOCK TABLES `item_pedido` WRITE;
 /*!40000 ALTER TABLE `item_pedido` DISABLE KEYS */;
-INSERT INTO `item_pedido` VALUES (140,1,1,NULL),(142,2,1,NULL),(143,1,2,NULL),(144,1,3,NULL),(146,1,7,NULL),(147,1,8,NULL),(148,1,9,NULL),(151,1,1,NULL),(154,1,1,NULL),(157,1,1,NULL),(160,1,1,NULL),(163,1,1,NULL),(166,1,1,NULL),(168,1,1,NULL),(170,1,1,NULL),(172,1,2,NULL);
+INSERT INTO `item_pedido` VALUES (140,1,1,NULL),(142,2,1,NULL),(143,1,2,NULL),(144,1,3,NULL),(146,1,7,NULL),(147,1,8,NULL),(148,1,9,NULL),(151,1,1,NULL),(154,1,1,NULL),(157,1,1,NULL),(160,1,1,NULL),(163,1,1,NULL),(166,1,1,NULL),(168,1,1,NULL),(170,1,1,NULL),(172,1,2,NULL),(174,1,7,NULL),(175,1,9,NULL);
 /*!40000 ALTER TABLE `item_pedido` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -119,7 +119,7 @@ CREATE TABLE `menu` (
 
 LOCK TABLES `menu` WRITE;
 /*!40000 ALTER TABLE `menu` DISABLE KEYS */;
-INSERT INTO `menu` VALUES (1,'Cup Cake recheado de Doce de Leite','assets/img/foods/cupcake.png','Cup Cake',8.7,1),(2,'Coberto com chantilly','assets/img/foods/donut.png','Donut',2.5,1),(3,'Pão artesanal com queijos italianos','assets/img/foods/bread.png','Pão Artesanal Italiano',15.9,1),(4,'O clássico. Não tem como errar.','assets/img/foods/burger.png','Classic Burger',18.5,2),(5,'Batatas fritas crocantes','assets/img/foods/fries.png','Batatas Fritas',5.5,2),(6,'O refri mais gelado da cidade.','assets/img/foods/coke.png','Refrigerante',4.5,2),(7,'Tradicional cappuccino com chantilly','assets/img/foods/capp.png','Cappuccino com Chantilly',9.9,3),(8,'Café espresso duplo. ','assets/img/foods/espreso.png','Super Espreso',12.5,3),(9,'O mais pedido da casa. O verdadeiro café americano pura água.','assets/img/foods/starb.png','Starbucks Copycat',15.6,3),(10,'Lasagna deliciosa que se salva por causa do queijo','assets/img/foods/zlasagna.png','Lasagna de Zucchini',14.9,4),(11,'Frango grelhado e salada','assets/img/foods/greensandwich.png','Sanduíche de Frango',10.5,4),(12,'Clássica salada ceasar.','assets/img/foods/ceasar.png','Salada Ceasar',33.9,4),(13,'Sunday com várias bolas de sorvete a sua escolha','assets/img/foods/sunday.png','Mega Sunday',21.5,5),(14,'Picolé de brigadeiro recheado com côco.','assets/img/foods/chocpop.png','Picolé de Brigadeiro',8.5,5),(15,'Clássico sorvete de rua onde todos os sabores são idênticos.','assets/img/foods/icestd.png','Sorvete Simples',1.5,5),(16,'Cup Cake de chocolate branco','assets/img/foods/cup.png','Cup Cake de Choc. Branco',5.5,6),(17,'Bolo recheado e coberto com morangos','assets/img/foods/straw.png','Bolo de Morango',40.5,6),(18,'Fatia de bolo de morango','assets/img/foods/cake.png','Fatia de Bolo',5.9,6);
+INSERT INTO `menu` VALUES (1,'Torresmo frito ','assets/img/foods/cupcake.png','Torresmo',8.7,1),(2,'Biscoito coberto com mel','assets/img/foods/donut.png','Biscoito',2.5,1),(3,'Pão artesanal com queijos italianos','assets/img/foods/bread.png','Pão Artesanal Italiano',15.9,1),(4,'O clássico. Não tem como errar.','assets/img/foods/burger.png','Hambúrger',18.5,2),(5,'Batatas fritas crocantes','assets/img/foods/fries.png','Batatas Fritas',5.5,2),(6,'O refri mais gelado da cidade.','assets/img/foods/coke.png','Refrigerante',4.5,2),(7,'Tradicional café com chantilly','assets/img/foods/capp.png','Café com Chantilly',9.9,3),(8,'Café espresso duplo. ','assets/img/foods/espreso.png','Super Espreso',12.5,3),(9,'O mais pedido da casa. O verdadeiro café com leite.','assets/img/foods/starb.png','Café com leite',15.6,3),(10,'Lasagna deliciosa que se salva por causa do queijo','assets/img/foods/zlasagna.png','Lasagna de Zucchini',14.9,4),(11,'Frango grelhado e salada','assets/img/foods/greensandwich.png','Sanduíche de Frango',10.5,4),(12,'Clássica salada ceasar.','assets/img/foods/ceasar.png','Salada Ceasar',33.9,4),(13,'Sunday com várias bolas de sorvete a sua escolha','assets/img/foods/sunday.png','Mega Sunday',21.5,5),(14,'Picolé de brigadeiro recheado com côco.','assets/img/foods/chocpop.png','Picolé de Brigadeiro',8.5,5),(15,'Clássico sorvete de rua onde todos os sabores são idênticos.','assets/img/foods/icestd.png','Sorvete Simples',1.5,5),(16,'Bolo de chocolate branco','assets/img/foods/cup.png','Bolo de Choc. Branco',5.5,6),(17,'Bolo recheado e coberto com morangos','assets/img/foods/straw.png','Bolo de Morango',40.5,6),(18,'Fatia de bolo de morango','assets/img/foods/cake.png','Fatia de Bolo',5.9,6);
 /*!40000 ALTER TABLE `menu` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -148,7 +148,7 @@ CREATE TABLE `pedido` (
 
 LOCK TABLES `pedido` WRITE;
 /*!40000 ALTER TABLE `pedido` DISABLE KEYS */;
-INSERT INTO `pedido` VALUES (129,'k@h.com','jlkkjhkjhkj','','GGGGGG',321,'MON'),(131,'k@h.com','jlkkjhkjhkj','','GGGGGG',321,'MON'),(133,'k@h.com','jlkkjhkjhkj','','GGGGGG',321,'MON'),(135,'k@h.com','jlkkjhkjhkj','','GGGGGG',321,'MON'),(137,'k@h.com','jlkkjhkjhkj','','GGGGGG',321,'MON'),(139,'k@h.com','jlkkjhkjhkj','','GGGGGG',321,'MON'),(141,'k@k.com','sssssssssssssssssss','654','jkhfkjhdjkfhkjkj',321,'MON'),(145,'a@a.com','ffffffffffffffff','','Leojhjhjh',54,'DEB'),(150,'k@h.com','jlkkjhkjhkj','','GGGGGG',321,'MON'),(153,'k@h.com','jlkkjhkjhkj','','GGGGGG',321,'MON'),(156,'k@h.com','jlkkjhkjhkj','','GGGGGG',321,'MON'),(159,'leo@leo.com','dsdsdsdsd','casa','Leonardo ',32,'DEB'),(162,'leo@leo.com','dsdsdsdsd','casa','Leonardo ',32,'DEB'),(165,'leo@leo.com','dsdsdsdsd','casa','Leonardo ',32,'DEB'),(167,'leo@leo.com','dsdsdsdsd','casa','Leonardo ',32,'DEB'),(169,'l@l.com','wwwwwwwwwwwwww','','sssssssssssss',2,'MON'),(171,'l@l.com','fffff','','aaaaaa',123,'MON');
+INSERT INTO `pedido` VALUES (129,'k@h.com','jlkkjhkjhkj','','GGGGGG',321,'MON'),(131,'k@h.com','jlkkjhkjhkj','','GGGGGG',321,'MON'),(133,'k@h.com','jlkkjhkjhkj','','GGGGGG',321,'MON'),(135,'k@h.com','jlkkjhkjhkj','','GGGGGG',321,'MON'),(137,'k@h.com','jlkkjhkjhkj','','GGGGGG',321,'MON'),(139,'k@h.com','jlkkjhkjhkj','','GGGGGG',321,'MON'),(141,'k@k.com','sssssssssssssssssss','654','jkhfkjhdjkfhkjkj',321,'MON'),(145,'a@a.com','ffffffffffffffff','','Leojhjhjh',54,'DEB'),(150,'k@h.com','jlkkjhkjhkj','','GGGGGG',321,'MON'),(153,'k@h.com','jlkkjhkjhkj','','GGGGGG',321,'MON'),(156,'k@h.com','jlkkjhkjhkj','','GGGGGG',321,'MON'),(159,'leo@leo.com','dsdsdsdsd','casa','Leonardo ',32,'DEB'),(162,'leo@leo.com','dsdsdsdsd','casa','Leonardo ',32,'DEB'),(165,'leo@leo.com','dsdsdsdsd','casa','Leonardo ',32,'DEB'),(167,'leo@leo.com','dsdsdsdsd','casa','Leonardo ',32,'DEB'),(169,'l@l.com','wwwwwwwwwwwwww','','sssssssssssss',2,'MON'),(171,'l@l.com','fffff','','aaaaaa',123,'MON'),(173,'leo@leo.com','Endereco','Casa','sssssssssss',332,'DEB');
 /*!40000 ALTER TABLE `pedido` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -191,4 +191,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-06 11:04:04
+-- Dump completed on 2019-03-06 21:56:30
