@@ -9,11 +9,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name="MENU")
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "restaurante"})
 public class MenuModel {
 	
 	@Id
@@ -35,7 +36,7 @@ public class MenuModel {
 	
 	@ManyToOne
 	@JoinColumn(name="ID_RESTAURANTE", nullable = false)
-	private RestauranteModel restautante;
+	private RestauranteModel restaurante;
 	
 	
 	public Long getId() {
@@ -78,12 +79,12 @@ public class MenuModel {
 		this.preco = preco;
 	}
 	
-	public RestauranteModel getRestautante() {
-		return restautante;
+	public RestauranteModel getRestaurante() {
+		return restaurante;
 	}
 	
-	public void setRestautante(RestauranteModel restautante) {
-		this.restautante = restautante;
+	public void setRestaurante(RestauranteModel restaurante) {
+		this.restaurante = restaurante;
 	}
 	
 }

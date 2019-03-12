@@ -45,7 +45,7 @@ public class RestauranteModel {
 	@Column(name="HORARIO_FUNCIONAMENTO", nullable = false)
 	private String horaFuncinamento;
 	
-	@OneToMany(mappedBy = "restautante", targetEntity = MenuModel.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "restaurante", targetEntity = MenuModel.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<MenuModel> listMenu;
 	
 		
