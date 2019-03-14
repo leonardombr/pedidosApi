@@ -34,9 +34,6 @@ public class PedidoModel {
 	@Column(name = "ENDERECO", nullable = false)
 	private String endereco;
 	
-	@Column(name = "NUMERO", nullable = false)
-	private Integer numero;
-	
 	@Column(name = "ENDERECO_OPCIONAL")
 	private String enderecoOpcional;
 	
@@ -76,14 +73,6 @@ public class PedidoModel {
 
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
-	}
-
-	public Integer getNumero() {
-		return numero;
-	}
-
-	public void setNumero(Integer numero) {
-		this.numero = numero;
 	}
 
 	public String getEnderecoOpcional() {

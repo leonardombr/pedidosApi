@@ -19,6 +19,7 @@ public class PedidoService {
 	
 	public PedidoModel save(PedidoModel pedido) throws Exception{
 		try {
+			pedido.getListItemPedido().forEach(itemPedido -> itemPedido.setPedido(pedido));
 			PedidoModel p = pedidoRepository.save(pedido);
 			return p;
 		} catch (Exception e) {

@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "ITEM_PEDIDO")
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "pedido"})
 public class ItensPedido {
 	
 	@Id
@@ -58,7 +58,7 @@ public class ItensPedido {
 	public void setMenu(MenuModel menu) {
 		this.menu = menu;
 	}
-
+	
 	public PedidoModel getPedido() {
 		return pedido;
 	}

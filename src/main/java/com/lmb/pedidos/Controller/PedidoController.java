@@ -30,6 +30,7 @@ public class PedidoController extends BaseReturn {
 
 	@PostMapping(value = "/salvar", produces = "application/json")
 	public @ResponseBody ResponseEntity save(@RequestBody @Valid PedidoModel pedido) {
+		
 		try {
 			PedidoModel p = pedidoService.save(pedido);
 			return handleResponse(p, "Pedido realizado com sucesso!");
